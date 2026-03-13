@@ -1,0 +1,54 @@
+{
+  "framework": "python",
+  "testFramework": "pytest",
+  "packageManager": "pip",
+  "agents": {
+    "orchestrator": {
+      "model": "claude-sonnet-4",
+      "temperature": 0.1
+    },
+    "solution-architector": {
+      "model": "claude-opus-4",
+      "temperature": 0.1
+    },
+    "coder": {
+      "model": "claude-sonnet-4",
+      "temperature": 0.1
+    },
+    "reviewer": {
+      "model": "claude-opus-4",
+      "temperature": 0.1
+    },
+    "checker": {
+      "model": "claude-sonnet-4",
+      "temperature": 0.1
+    },
+    "explore": {
+      "model": "claude-sonnet-4",
+      "temperature": 0.1
+    },
+    "librarian": {
+      "model": "claude-sonnet-4",
+      "temperature": 0.1
+    }
+  },
+  "permissions": {
+    "allowedTools": [
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Bash",
+      "Task"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(curl * | bash)",
+      "Bash(ssh *)",
+      "Read(~/.ssh/*)",
+      "Read(~/.aws/*)",
+      "Read(~/.env)"
+    ]
+  }
+}
